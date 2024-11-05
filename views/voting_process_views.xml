@@ -1,0 +1,48 @@
+<odoo>
+    <record id="view_voting_process_tree" model="ir.ui.view">
+        <field name="name">voting.process.tree</field>
+        <field name="model">voting.process</field>
+        <field name="arch" type="xml">
+            <tree string="Procesos de Votación">
+                <field name="description" />
+                <field name="start_date" />
+                <field name="end_date" />
+                <field name="campus_id" />
+                <field name="state" />
+                <button name="action_open_voting" type="object" string="Abrir" class="btn-success"
+                    context="{'form_view_initial_mode': 'edit'}" invisible="state == 'open'" />
+                <button name="action_close_voting" type="object" string="Cerrar" class="btn-danger"
+                    context="{'form_view_initial_mode': 'edit'}" invisible="state == 'closed'" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_voting_process" model="ir.actions.act_window">
+        <field name="name">Procesos de Votación</field>
+        <field name="res_model">voting.process</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_voting_process_tree" />
+        <field name="domain">[]</field>
+    </record>
+
+    <record id="view_voting_process_form" model="ir.ui.view">
+        <field name="name">voting.process.form</field>
+        <field name="model">voting.process</field>
+        <field name="arch" type="xml">
+            <form string="Proceso de Votación">
+                <sheet>
+                    <group>
+                        <field name="description" required="1" />
+                        <field name="start_date" required="1" />
+                        <field name="end_date" required="1" />
+                        <field name="campus_id" required="1" />
+                        <field name="state" readonly="1" />
+                        <field name="candidates_ids" widget="many2many_tags"
+                            options="{'no_create': True}"
+                            domain="[('campus_id', '=', campus_id), ('is_student', '=', True)]" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

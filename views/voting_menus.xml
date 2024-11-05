@@ -1,0 +1,55 @@
+<odoo>
+    <menuitem
+        id="menu_uniacme_voting_root"
+        name="Módulo de Votación"
+        sequence="10" />
+
+    <menuitem
+        id="menu_university_campus"
+        name="Sedes Universitarias"
+        parent="menu_uniacme_voting_root"
+        action="action_university_campus"
+        sequence="20" />
+
+    <menuitem
+        id="menu_university_career"
+        name="Carreras Universitarias"
+        parent="menu_uniacme_voting_root"
+        action="action_university_career"
+        sequence="30" />
+
+    <menuitem
+        id="menu_students"
+        name="Estudiantes"
+        parent="menu_uniacme_voting_root"
+        action="action_student"
+        sequence="40" />
+
+    <menuitem
+        id="menu_voting_processes"
+        name="Procesos de Votación"
+        parent="menu_uniacme_voting_root"
+        action="action_voting_process"
+        sequence="50" />
+
+    <menuitem
+        id="menu_voting_portal"
+        name="Portal de Votación"
+        parent="menu_uniacme_voting_root"
+        action="action_voting_portal"
+        sequence="60" />
+
+    <menuitem
+        id="menu_voting_statistics"
+        name="Estadísticas de Votación"
+        action="action_voting_statistics"
+        parent="menu_uniacme_voting_root"
+        sequence="70" />
+
+    <menuitem
+        id="menu_import_voting"
+        name="Importar Procesos de Votación"
+        action="action_import_voting_wizard"
+        parent="menu_uniacme_voting_root"
+        sequence="80" />
+</odoo>

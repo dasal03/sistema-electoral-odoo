@@ -1,0 +1,20 @@
+<odoo>
+    <record id="view_voting_statistics_pivot" model="ir.ui.view">
+        <field name="name">voting.statistics.pivot</field>
+        <field name="model">voting.statistics</field>
+        <field name="arch" type="xml">
+            <pivot string="Estadísticas de Votación">
+                <field name="voting_process_id" type="row" />
+                <field name="candidate_id" type="col" />
+                <field name="vote_count" type="measure" />
+            </pivot>
+        </field>
+    </record>
+
+    <record id="action_voting_statistics" model="ir.actions.act_window">
+        <field name="name">Estadísticas de Votación</field>
+        <field name="res_model">voting.statistics</field>
+        <field name="view_mode">pivot</field>
+        <field name="target">current</field>
+    </record>
+</odoo>

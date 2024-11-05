@@ -1,0 +1,69 @@
+<odoo>
+    <record id="action_voting_portal" model="ir.actions.act_url">
+        <field name="name">Portal de Votación</field>
+        <field name="type">ir.actions.act_url</field>
+        <field name="url">/voting_portal</field>
+        <field name="target">self</field>
+    </record>
+
+    <template id="voting_portal_template" name="Portal de Votación">
+        <t t-call="website.layout">
+            <div class="container mt-4">
+                <h1 class="text-center">Portal de Votación</h1>
+                <t t-if="error_message">
+                    <div class="alert alert-danger" role="alert">
+                        <t t-esc="error_message" />
+                    </div>
+                </t>
+                <t t-if="voting_message">
+                    <div class="alert alert-success" role="alert">
+                        <t t-esc="voting_message" />
+                    </div>
+                </t>
+
+                <t t-if="not student_id">
+                    <form action="/voting_portal" method="get" class="bg-light p-4 rounded shadow">
+                        <div class="form-group">
+                            <label for="student_id">Cédula:</label>
+                            <input type="text" name="student_id" class="form-control"
+                                required="true" />
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg mt-4">Buscar Votación</button>
+                    </form>
+                </t>
+
+                <t t-if="student_id and votings">
+                    <h2 class="mb-4">Emitir Voto</h2>
+                    <form action="/vote" method="post" class="bg-light p-4 rounded shadow">
+                        <input type="hidden" name="student_id" t-att-value="student_id" />
+                        <div class="form-group mt-4">
+                            <label for="voting_process_id">Selecciona la votación:</label>
+                            <select name="voting_process_id" class="form-control" required="true">
+                                <t t-foreach="votings" t-as="voting">
+                                    <option t-att-value="voting.id">
+                                        <t t-esc="voting.description" />
+                                    </option>
+                                </t>
+                            </select>
+                        </div>
+                        <div class="form-group mt-4">
+                            <label for="candidate_id">Selecciona el candidato:</label>
+                            <select name="candidate_id" class="form-control" required="true">
+                                <t t-foreach="candidates" t-as="candidate">
+                                    <option t-att-value="candidate.id">
+                                        <t t-esc="candidate.name" />
+                                    </option>
+                                </t>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg mt-4">Emitir Voto</button>
+                    </form>
+                </t>
+
+                <footer class="mt-5">
+                    <p>© 2024 Universidad UNIACME. Todos los derechos reservados.</p>
+                </footer>
+            </div>
+        </t>
+    </template>
+</odoo>

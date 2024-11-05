@@ -1,0 +1,27 @@
+<odoo>
+    <record id="view_import_voting_wizard" model="ir.ui.view">
+        <field name="name">import.voting.wizard.form</field>
+        <field name="model">import.voting.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Import Voting Processes">
+                <sheet>
+                    <group>
+                        <field name="file" filename="file_name" />
+                    </group>
+                    <footer>
+                        <button string="Import" type="object" name="import_voting_processes"
+                            class="btn-primary" />
+                        <button string="Cancel" class="btn-secondary" special="cancel" />
+                    </footer>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_import_voting_wizard" model="ir.actions.act_window">
+        <field name="name">Importar procesos de votación</field>
+        <field name="res_model">import.voting.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>

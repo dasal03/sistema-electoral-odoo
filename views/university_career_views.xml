@@ -1,0 +1,35 @@
+<odoo>
+    <record id="view_university_career_tree" model="ir.ui.view">
+        <field name="name">university.career.tree</field>
+        <field name="model">university.career</field>
+        <field name="arch" type="xml">
+            <tree string="Carreras Universitarias">
+                <field name="code" string="Código de Carrera" />
+                <field name="name" string="Nombre de Carrera" />
+                <field name="campus_id" string="Sede" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_university_career_form" model="ir.ui.view">
+        <field name="name">university.career.form</field>
+        <field name="model">university.career</field>
+        <field name="arch" type="xml">
+            <form string="Carrera Universitaria">
+                <sheet>
+                    <group>
+                        <field name="code" string="Código de Carrera" />
+                        <field name="name" string="Nombre de Carrera" />
+                        <field name="campus_id" string="Sede" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_university_career" model="ir.actions.act_window">
+        <field name="name">Carreras Universitarias</field>
+        <field name="res_model">university.career</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

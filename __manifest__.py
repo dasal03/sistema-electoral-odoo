@@ -1,0 +1,22 @@
+{
+    "name": "UNIACME Voting",
+    "author": "Diego Saltarin",
+    "category": "Education",
+    "summary": "Voting module for UNIACME University",
+    "version": "1.0",
+    "depends": ["base", "website"],
+    "data": [
+        "security/ir.model.access.csv",
+        "security/security.xml",
+        "views/university_campus_views.xml",
+        "views/university_career_views.xml",
+        "views/student_views.xml",
+        "views/voting_process_views.xml",
+        "views/voting_portal_template.xml",
+        "views/voting_pivot_views.xml",
+        "wizards/import_voting_wizard.xml",
+        "views/voting_menus.xml",
+    ],
+    "installable": True,
+    "application": True,
+}

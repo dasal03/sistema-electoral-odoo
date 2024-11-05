@@ -1,0 +1,37 @@
+<odoo>
+    <record id="view_university_campus_tree" model="ir.ui.view">
+        <field name="name">university.campus.tree</field>
+        <field name="model">university.campus</field>
+        <field name="arch" type="xml">
+            <tree string="Sedes Universitarias">
+                <field name="name" />
+                <field name="country_id" />
+                <field name="city_id" />
+                <field name="active" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_university_campus_form" model="ir.ui.view">
+        <field name="name">university.campus.form</field>
+        <field name="model">university.campus</field>
+        <field name="arch" type="xml">
+            <form string="Sede Universitaria">
+                <sheet>
+                    <group>
+                        <field name="name" />
+                        <field name="country_id" />
+                        <field name="city_id" domain="[('country_id', '=', country_id)]" />
+                        <field name="active" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_university_campus" model="ir.actions.act_window">
+        <field name="name">Sedes Universitarias</field>
+        <field name="res_model">university.campus</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

@@ -1,0 +1,73 @@
+<odoo>
+    <data noupdate="1">
+        <record id="model_university_campus_access" model="ir.model.access">
+            <field name="name">university.campus access</field>
+            <field name="model_id" ref="model_university_campus" />
+            <field name="group_id" ref="base.group_user" />
+            <field name="perm_read" eval="1" />
+            <field name="perm_write" eval="1" />
+            <field name="perm_create" eval="1" />
+            <field name="perm_unlink" eval="1" />
+        </record>
+
+        <record id="model_university_career_access" model="ir.model.access">
+            <field name="name">university.career access</field>
+            <field name="model_id" ref="model_university_career" />
+            <field name="group_id" ref="base.group_user" />
+            <field name="perm_read" eval="1" />
+            <field name="perm_write" eval="1" />
+            <field name="perm_create" eval="1" />
+            <field name="perm_unlink" eval="1" />
+        </record>
+
+        <record id="model_student_access" model="ir.model.access">
+            <field name="name">student access</field>
+            <field name="model_id" ref="model_res_partner" />
+            <field name="group_id" ref="base.group_user" />
+            <field name="perm_read" eval="1" />
+            <field name="perm_write" eval="1" />
+            <field name="perm_create" eval="1" />
+            <field name="perm_unlink" eval="1" />
+        </record>
+
+        <record id="model_voting_process_access" model="ir.model.access">
+            <field name="name">voting.process access</field>
+            <field name="model_id" ref="model_voting_process" />
+            <field name="group_id" ref="base.group_user" />
+            <field name="perm_read" eval="1" />
+            <field name="perm_write" eval="1" />
+            <field name="perm_create" eval="1" />
+            <field name="perm_unlink" eval="1" />
+        </record>
+
+        <record id="model_voter_record_access" model="ir.model.access">
+            <field name="name">voter.record access</field>
+            <field name="model_id" ref="model_voter_record" />
+            <field name="group_id" ref="base.group_user" />
+            <field name="perm_read" eval="1" />
+            <field name="perm_write" eval="1" />
+            <field name="perm_create" eval="1" />
+            <field name="perm_unlink" eval="1" />
+        </record>
+
+        <record id="model_voting_statistics" model="ir.model.access">
+            <field name="name">voting.statistics access</field>
+            <field name="model_id" ref="model_voter_record" />
+            <field name="group_id" ref="base.group_user" />
+            <field name="perm_read" eval="1" />
+            <field name="perm_write" eval="1" />
+            <field name="perm_create" eval="1" />
+            <field name="perm_unlink" eval="1" />
+        </record>
+
+        <record id="model_import_voting_wizard" model="ir.model.access">
+            <field name="name">voting.wizard access</field>
+            <field name="model_id" ref="model_import_voting_wizard" />
+            <field name="group_id" ref="base.group_user" />
+            <field name="perm_read" eval="1" />
+            <field name="perm_write" eval="1" />
+            <field name="perm_create" eval="1" />
+            <field name="perm_unlink" eval="1" />
+        </record>
+    </data>
+</odoo>

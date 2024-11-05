@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_university_campus,access_university_campus,model_university_campus,base.group_user,1,1,1,1
+access_university_career,access_university_career,model_university_career,base.group_user,1,1,1,1
+access_student,access_student,model_res_partner,base.group_user,1,1,1,1
+access_voting_process,access_voting_process,model_voting_process,base.group_user,1,1,1,1
+access_voter_record,access_voter_record,model_voter_record,base.group_user,1,1,1,1
+access_voting_statistics,access_voting_statistics,model_voting_statistics,base.group_user,1,1,1,1
+access_import_voting_wizard,access_import_voting_wizard,model_import_voting_wizard,,1,1,1,1
